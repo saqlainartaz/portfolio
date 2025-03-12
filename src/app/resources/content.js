@@ -1,15 +1,15 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Saqlain Alam",
-  lastName: "Artas",
+  firstName: "Selene",
+  lastName: "Yu",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "AI Expert",
+  role: "Design Engineer",
   avatar: "/images/avatar.jpg",
-  location: "Europe/Vilnius", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Urdu", "Hindi"], // optional: Leave the array empty if you don't want to display languages
+  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -29,12 +29,12 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/saqlainartaz",
+    link: "https://github.com/once-ui-system/nextjs-starter",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/in/saqlainartaz/",
+    link: "https://www.linkedin.com/company/once-ui/",
   },
   {
     name: "X",
@@ -44,7 +44,7 @@ const social = [
   {
     name: "Email",
     icon: "email",
-    link: "mailto:saqlainartaz@gmail.com",
+    link: "mailto:example@gmail.com",
   },
 ];
 
@@ -55,7 +55,7 @@ const home = {
   headline: <>Design engineer and builder</>,
   subline: (
     <>
-      I'm Saqlain Alam Artas, an AI expert at <InlineCode>Artaz AI Solutions</InlineCode>, where I craft intuitive
+      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
       <br /> user experiences. After hours, I build my own projects.
     </>
   ),
@@ -81,8 +81,9 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Saqlain is a spain-based AI with a passion for transforming complex challenges
-        into simple, elegant AI solutions. His work spans AI automations, personalized AI agents, and the convergence of AI and technology.
+        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
+        into simple, elegant design solutions. Her work spans digital interfaces, interactive
+        experiences, and the convergence of design and technology.
       </>
     ),
   },
@@ -91,12 +92,13 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "Upwork",
+        company: "FLY",
         timeframe: "2022 - Present",
-        role: "UX/UI Designer and Researcher",
+        role: "Senior Design Engineer",
         achievements: [
           <>
-            Designed the UI/UX for the CrushIT inc. USA, resulting in creation of a brand new Fitness platform targeted for the USA market.
+            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
+            engagement and 30% faster load times.
           </>,
           <>
             Spearheaded the integration of AI tools into design workflows, enabling designers to
@@ -136,12 +138,12 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "South East European University, North Macedonia",
-        description: <>Studied bachelors of computer sciences.</>,
+        name: "University of Jakarta",
+        description: <>Studied software engineering.</>,
       },
       {
-        name: "European University of Valencia, Spain",
-        description: <>Exchange program focusing on AI trends, content marketing and data science</>,
+        name: "Build the Future",
+        description: <>Studied online marketing and personal branding.</>,
       },
     ],
   },
@@ -169,8 +171,8 @@ const about = {
         ],
       },
       {
-        title: "Python",
-        description: <>Building python gen apps with python + django/flask + database.</>,
+        title: "Next.js",
+        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {

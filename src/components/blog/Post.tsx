@@ -10,6 +10,8 @@ interface PostProps {
 }
 
 export default function Post({ post, thumbnail }: PostProps) {
+  const tags = post.metadata.tag.split(",").map((tag: string) => tag.trim());
+
   return (
     <SmartLink
       fillWidth
@@ -45,10 +47,14 @@ export default function Post({ post, thumbnail }: PostProps) {
             {post.metadata.title}
           </Heading>
           <Text variant="label-default-s" onBackground="neutral-weak">
-            {formatDate(post.metadata.publishedAt, false)}
+            {post.metadata.publishedAt && formatDate(post.metadata.publishedAt, false)}
           </Text>
-          {post.metadata.tag && (
-            <Tag className="mt-8" label={post.metadata.tag} variant="neutral" />
+          {tags.length > 0 && (
+            <Flex gap="8">
+              {tags.map((tag: string, index: number) =>
+                index < 3 ? <Tag key={index} label={tag} variant="neutral" /> : null
+              )}
+            </Flex>
           )}
         </Column>
       </Flex>
