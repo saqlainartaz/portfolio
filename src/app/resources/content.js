@@ -1,14 +1,14 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "SaqlainAlam",
+  firstName: "Saqlain Alam",
   lastName: "Artas",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
   role: "AI Expert",
   avatar: "/images/avatar.jpg",
-  location: "Europe/Valencia", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "Europe/Vilnius", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Urdu", "Hindi"], // optional: Leave the array empty if you don't want to display languages
 };
 
