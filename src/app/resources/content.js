@@ -136,12 +136,12 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "South East European University, North Macedonia",
+        description: <>Studied bachelors of computer sciences.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "European University of Valencia, Spain",
+        description: <>Exchange program focusing on AI trends, content marketing and data science</>,
       },
     ],
   },
@@ -169,8 +169,8 @@ const about = {
         ],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        title: "Python",
+        description: <>Building python gen apps with python + django/flask + database.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
