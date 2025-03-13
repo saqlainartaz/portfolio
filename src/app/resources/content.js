@@ -1,15 +1,15 @@
 import { InlineCode } from "@/once-ui/components";
 
 const person = {
-  firstName: "Selene",
-  lastName: "Yu",
+  firstName: "Saqlain Alam",
+  lastName: "Artas",
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Design Engineer",
+  role: "Agentic and Generative AI Expert",
   avatar: "/images/avatar.jpg",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  location: "Europe/Vienna", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Urdu", "Hindi", "Macedonia A1", "Albanian A1", "Khowar", "Shina"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -17,7 +17,7 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
+      I occasionally write about AI, design, technology, and share thoughts on the intersection of
       creativity and engineering.
     </>
   ),
@@ -29,22 +29,22 @@ const social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system/nextjs-starter",
+    link: "https://github.com/saqlainartaz",
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/saqlainartaz",
   },
   {
     name: "X",
     icon: "x",
-    link: "",
+    link: "https://www.x.com/saqlainartaz",
   },
   {
     name: "Email",
     icon: "email",
-    link: "mailto:example@gmail.com",
+    link: "mailto:artazdesigns@gmail.com",
   },
 ];
 
@@ -52,11 +52,11 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
+  headline: <>Agentic and Generative AI Expert</>,
   subline: (
     <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
+      I'm Saqlain, an <InlineCode>AI expert</InlineCode>,  I utilize AI to
+      <br /> assist with automations, content marketing, website generation, coding, debugging, and creation of AI agents.
     </>
   ),
 };
@@ -81,9 +81,9 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Saqlain is a Europe-based agentic and generative AI expert with a passion for transforming complex challenges
+        into simple, elegant AI solutions. His work spans use of AI for automations, content generation, UX solutions, idea refining, agentic AI development, 
+        and the convergence of design and technology.
       </>
     ),
   },
@@ -92,9 +92,9 @@ const about = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
+        company: "Upwork",
         timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        role: "Freelancer",
         achievements: [
           <>
             Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
@@ -116,17 +116,16 @@ const about = {
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Joblink MK",
+        timeframe: "2024-2025",
+        role: "Project Manager",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Initiated a project to connect universities in Macedonia to the Asian Market. The project included B2B negotiations, contract development, 
+            and dealing with agencies and universities.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Led a cross-functional team to market the initiave and find potential universities willing to collaborate and also finding students.
           </>,
         ],
         images: [],
@@ -138,12 +137,12 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "European University of Valencia, Spain",
+        description: <>Exchange semester focusing on generative and agentic AI, content marketing and applications and trends in data science.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "South East European University, Macedonia",
+        description: <>Studied Bachelors of Computer Sciences.</>,
       },
     ],
   },
@@ -171,8 +170,47 @@ const about = {
         ],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+        title: "Adobe Suite(Photoshop, illustrator and indesign)",
+        description: <>Creating content with advanced Adobe suite.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "Advanced User of Microsoft Tools",
+        description: <>Diagnosing windows problems, windows installation, use of Microsoft Office, Visual Studio</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "LinkedIn and Rocketsearch",
+        description: <>lead generation for cold emails and calls.</>,
+        // optional: leave the array empty if you don't want to display images
+        images: [
+          {
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "Project image",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
+        title: "IT skills",
+        description: <>Finding solutions to problems related to IT</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
