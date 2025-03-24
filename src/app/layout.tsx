@@ -92,7 +92,6 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         code.variable,
       )}
     >
-      <Analytics />
       <ToastProvider>
         <Column style={{ minHeight: "100vh" }} as="body" fillWidth margin="0" padding="0">
           <Background
@@ -154,7 +153,9 @@ export default async function RootLayout({ children }: RootLayoutProps) {
             flex={1}
           >
             <Flex horizontal="center" fillWidth minHeight="0">
-              <RouteGuard>{children}</RouteGuard>
+              <RouteGuard>{children}
+              <Analytics />
+              </RouteGuard>
             </Flex>
           </Flex>
           <Footer />
