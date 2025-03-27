@@ -2,7 +2,7 @@ import "@/once-ui/styles/index.scss";
 import "@/once-ui/tokens/index.scss";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
-import { GoogleAnalytics } from "@next/third-parties/google";
+// import { GoogleAnalytics } from "@next/third-parties/google";
 import classNames from "classnames";
 
 import { Footer, Header, RouteGuard } from "@/components";
@@ -96,7 +96,6 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         code.variable,
       )}
     >
-    <GoogleAnalytics gaId="G-ZFC8C5DT5M"/>
     <Analytics />
 
       <ToastProvider>
