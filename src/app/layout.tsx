@@ -95,6 +95,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         code.variable,
       )}
     >
+    <Analytics />
     {/* Google Analytics */}
     <Script
       strategy="afterInteractive"
