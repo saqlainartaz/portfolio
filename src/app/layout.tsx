@@ -96,22 +96,23 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       )}
     >
     <Analytics />
-    {/* Google Analytics */}
-    <Script
-      strategy="afterInteractive"
-      src="https://www.googletagmanager.com/gtag/js?id=G-ZFC8C5DT5M"/>
-    <Script
-      id="google-analytics"
-      strategy="afterInteractive"
-      dangerouslySetInnerHTML={{
-        __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-ZFC8C5DT5M');
-        `,
-      }}
-    />
+      {/* Google Analytics */}
+      <Script
+        strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-ZFC8C5DT5M"
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-ZFC8C5DT5M');
+          `,
+        }}
+      />
       <ToastProvider>
         <Column style={{ minHeight: "100vh" }} as="body" fillWidth margin="0" padding="0">
           <Background
