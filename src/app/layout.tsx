@@ -1,6 +1,5 @@
 import "@/once-ui/styles/index.scss";
 import "@/once-ui/tokens/index.scss";
-// import Script from "next/script";
 
 import { Analytics } from "@vercel/analytics/react";
 import { GoogleAnalytics } from "@next/third-parties/google";
