@@ -99,8 +99,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     {/* Google Analytics */}
     <Script
       strategy="afterInteractive"
-      src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-    />
+      src="https://www.googletagmanager.com/gtag/js?id=G-ZFC8C5DT5M"/>
     <Script
       id="google-analytics"
       strategy="afterInteractive"
@@ -109,7 +108,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_MEASUREMENT_ID}');
+          gtag('config', 'G-ZFC8C5DT5M');
         `,
       }}
     />
