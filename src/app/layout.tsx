@@ -2,6 +2,7 @@ import "@/once-ui/styles/index.scss";
 import "@/once-ui/tokens/index.scss";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import classNames from "classnames";
 
 import { Footer, Header, RouteGuard } from "@/components";
@@ -75,24 +76,6 @@ const GA_MEASUREMENT_ID = "G-ZFC8C5DT5M";
 
 export default async function RootLayout({ children }: RootLayoutProps) {
   return (
-    <>
-          {/* Google Analytics */}
-          <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-ZFC8C5DT5M"
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-ZFC8C5DT5M');
-            `,
-          }}
-        />
     <Flex
       as="html"
       lang="en"
@@ -113,6 +96,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         code.variable,
       )}
     >
+    <GoogleAnalytics gaId="G-ZFC8C5DT5M"/>
     <Analytics />
 
       <ToastProvider>
@@ -185,6 +169,5 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         </Column>
       </ToastProvider>
     </Flex>
-    </>
   );
 }
