@@ -97,7 +97,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       )}
     >
     <Analytics />
-    <GoogleAnalytics gaId="G-ZFC8C5DT5M" />
+    <GoogleAnalytics gaId="G-8E3LM6PV2R" />
 
       <ToastProvider>
         <Column style={{ minHeight: "100vh" }} as="body" fillWidth margin="0" padding="0">
