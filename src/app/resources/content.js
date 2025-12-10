@@ -241,6 +241,12 @@ const work = {
   // All projects will be listed on the /home and /work routes
 };
 
+const projects = {
+  label: "Projects",
+  title: "My projects",
+  description: `Projects and work by ${person.name}`,
+};
+
 const gallery = {
   label: "Gallery",
   title: "My photo gallery",
@@ -320,4 +326,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work, projects, gallery };
