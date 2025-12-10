@@ -242,9 +242,9 @@ const work = {
 };
 
 const projects = {
-  label: "Projects",
-  title: "My projects",
-  description: `Projects and work by ${person.name}`,
+  label: "AI",
+  title: "AI Chat Assistant",
+  description: `AI-powered chat with multiple provider support`,
 };
 
 const gallery = {
