@@ -38,6 +38,7 @@
     "eslint": "^8.56.0",
     "postcss-custom-media": "^10.0.7",
     "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^11.2.0",
     "typescript": "^5"
   }
 }
