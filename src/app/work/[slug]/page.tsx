@@ -8,9 +8,9 @@ import { formatDate } from "@/app/utils/formatDate";
 import ScrollToHash from "@/components/ScrollToHash";
 
 interface WorkParams {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
@@ -20,8 +20,9 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
   }));
 }
 
-export function generateMetadata({ params: { slug } }: WorkParams) {
-  let post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === slug);
+export async function generateMetadata(props: WorkParams) {
+  const params = await props.params;
+  let post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === params.slug);
 
   if (!post) {
     return;
@@ -63,7 +64,8 @@ export function generateMetadata({ params: { slug } }: WorkParams) {
   };
 }
 
-export default function Project({ params }: WorkParams) {
+export default async function Project(props: WorkParams) {
+  const params = await props.params;
   let post = getPosts(["src", "app", "work", "projects"]).find((post) => post.slug === params.slug);
 
   if (!post) {
