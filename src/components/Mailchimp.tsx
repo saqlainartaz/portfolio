@@ -127,11 +127,7 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
         {newsletter.description}
       </Text>
       <form
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-        }}
+        style={{ width: "100%", display: "flex", justifyContent: "center" }}
         action={mailchimp.action}
         method="post"
         id="mc-embedded-subscribe-form"
@@ -156,7 +152,7 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
             onBlur={handleBlur}
             errorMessage={error}
           />
-          <div style={{ display: "none" }}>
+          <Flex hide="s">
             <input
               type="checkbox"
               readOnly
@@ -165,12 +161,12 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
               value=""
               checked
             />
-          </div>
-          <div id="mce-responses" className="clearfalse">
-            <div className="response" id="mce-error-response" style={{ display: "none" }}></div>
-            <div className="response" id="mce-success-response" style={{ display: "none" }}></div>
-          </div>
-          <div aria-hidden="true" style={{ position: "absolute", left: "-5000px" }}>
+          </Flex>
+          <Flex id="mce-responses">
+            <Flex id="mce-error-response" hide="s"></Flex>
+            <Flex id="mce-success-response" hide="s"></Flex>
+          </Flex>
+          <Flex position="absolute" style={{ left: "-5000px" }} aria-hidden="true">
             <input
               type="text"
               readOnly
@@ -178,14 +174,14 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
               tabIndex={-1}
               value=""
             />
-          </div>
-          <div className="clear">
-            <Flex height="48" vertical="center">
+          </Flex>
+          <Flex>
+            <Flex height="48" vertical="center" fillWidth>
               <Button id="mc-embedded-subscribe" value="Subscribe" size="m" fillWidth>
                 Subscribe
               </Button>
             </Flex>
-          </div>
+          </Flex>
         </Flex>
       </form>
     </Column>
