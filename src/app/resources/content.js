@@ -6,10 +6,10 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Computer Science Graduate focused on Generative AI, LLM-based Agentic Systems and Cybersecurity",
+  role: "Computer Science Graduate | AI & Cybersecurity",
   avatar: "/images/avatar.jpg",
   location: "Europe/Vienna", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Urdu", "Hindi", "Macedonia A1", "Albanian A1", "Khowar", "Shina"], // optional: Leave the array empty if you don't want to display languages
+  languages: ["English", "Urdu", "Macedonia A1", "Albanian A1", "Khowar"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter = {
@@ -17,7 +17,8 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      Exploring generative AI and agentic systems using modern AI tools, while moving toward Python-based implementation, with an interest in system design and cybersecurity.
+      I occasionally write about AI, design, technology, and share thoughts on the intersection of
+      creativity and engineering.
     </>
   ),
 };
@@ -35,15 +36,15 @@ const social = [
     icon: "linkedin",
     link: "https://www.linkedin.com/in/saqlainartaz",
   },
-  {
-    name: "X",
-    icon: "x",
-    link: "https://www.x.com/saqlainartaz",
-  },
+  // {
+  //   name: "X",
+  //   icon: "x",
+  //   link: "https://www.x.com/saqlainartaz",
+  // },
   {
     name: "Email",
     icon: "email",
-    link: "mailto:artazdesigns@gmail.com",
+    link: "mailto:saqlainartaz@gmail.com",
   },
 ];
 
@@ -51,11 +52,12 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Computer Science Graduate focused on Generative AI and LLM-based Agentic Systems</>,
+  headline: <>Computer Science Graduate | AI & Cybersecurity</>,
   subline: (
     <>
-      I'm Saqlain, an <InlineCode>AI expert</InlineCode>,  I utilize AI to
-      <br /> assist with automations, content marketing, website generation, coding, debugging, and creation of AI agents.
+      I'm Saqlain, interested in <InlineCode>Generative AI</InlineCode>,
+      agentic systems, and cybersecurity — exploring how intelligent systems
+      can be designed, secured, and applied in real-world environments.
     </>
   ),
 };
@@ -73,16 +75,17 @@ const about = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://cal.eu/saqlain",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Saqlain is a Europe-based agentic and generative AI expert with a passion for transforming complex challenges
-        into simple, elegant AI solutions. His work spans use of AI for automations, content generation, UX solutions, idea refining, agentic AI development,
-        and the convergence of design and technology.
+        Saqlain is a Europe-based Computer Science graduate with interests in Generative AI,
+        LLM-based agentic systems, and cybersecurity. His work focuses on exploring how intelligent
+        systems are designed, evaluated, and secured, with an emphasis on developing reliable
+        AI-driven workflows and understanding their real-world applications.
       </>
     ),
   },
