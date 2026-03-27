@@ -16,9 +16,9 @@ const protectedRoutes = {
 
 const style = {
   theme: "light", // dark | light
-  neutral: "gray", // sand | gray | slate
-  brand: "violet", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-  accent: "orange", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  neutral: "sand", // sand | gray | slate
+  brand: "moss", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  accent: "emerald", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
   border: "playful", // rounded | playful | conservative
@@ -48,7 +48,7 @@ const effects = {
     display: true,
     size: 2,
     color: "brand-on-background-weak",
-    opacity: 20,
+    opacity: 30,
   },
   lines: {
     display: false,
