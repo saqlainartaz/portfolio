@@ -82,7 +82,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Saqlain is a Europe-based Computer Science graduate with interests in Generative AI,
+        Saqlain is a Computer Science graduate with interests in Generative AI,
         LLM-based agentic systems, and cybersecurity. His work focuses on exploring how intelligent
         systems are designed, evaluated, and secured, with an emphasis on developing reliable
         AI-driven workflows and understanding their real-world applications.
