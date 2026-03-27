@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Computer Science Graduate focused on Generative AI and LLM-based Agentic Systems",
+  role: "Computer Science Graduate focused on Generative AI, LLM-based Agentic Systems and Cybersecurity",
   avatar: "/images/avatar.jpg",
   location: "Europe/Vienna", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Urdu", "Hindi", "Macedonia A1", "Albanian A1", "Khowar", "Shina"], // optional: Leave the array empty if you don't want to display languages
@@ -17,8 +17,7 @@ const newsletter = {
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
     <>
-      I occasionally write about AI, design, technology, and share thoughts on the intersection of
-      creativity and engineering.
+      Exploring generative AI and agentic systems using modern AI tools, while moving toward Python-based implementation, with an interest in system design and cybersecurity.
     </>
   ),
 };
@@ -82,7 +81,7 @@ const about = {
     description: (
       <>
         Saqlain is a Europe-based agentic and generative AI expert with a passion for transforming complex challenges
-        into simple, elegant AI solutions. His work spans use of AI for automations, content generation, UX solutions, idea refining, agentic AI development, 
+        into simple, elegant AI solutions. His work spans use of AI for automations, content generation, UX solutions, idea refining, agentic AI development,
         and the convergence of design and technology.
       </>
     ),
@@ -121,7 +120,7 @@ const about = {
         role: "Project Manager",
         achievements: [
           <>
-            Initiated a project to connect universities in Macedonia to the Asian Market. The project included B2B negotiations, contract development, 
+            Initiated a project to connect universities in Macedonia to the Asian Market. The project included B2B negotiations, contract development,
             and dealing with agencies and universities.
           </>,
           <>
