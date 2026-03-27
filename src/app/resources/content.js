@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Agentic and Generative AI Expert",
+  role: "Computer Science Graduate focused on Generative AI and LLM-based Agentic Systems",
   avatar: "/images/avatar.jpg",
   location: "Europe/Vienna", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Urdu", "Hindi", "Macedonia A1", "Albanian A1", "Khowar", "Shina"], // optional: Leave the array empty if you don't want to display languages
@@ -52,7 +52,7 @@ const home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Agentic and Generative AI Expert</>,
+  headline: <>Computer Science Graduate focused on Generative AI and LLM-based Agentic Systems</>,
   subline: (
     <>
       I'm Saqlain, an <InlineCode>AI expert</InlineCode>,  I utilize AI to
