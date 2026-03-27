@@ -26,6 +26,8 @@ import {
 } from "react-icons/hi2";
 
 import {
+  PiSunDuotone,
+  PiMoonDuotone,
   PiHouseDuotone,
   PiUserCircleDuotone,
   PiGridFourDuotone,
@@ -67,4 +69,6 @@ export const iconLibrary: Record<string, IconType> = {
   x: FaXTwitter,
   clipboard: HiClipboard,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
+  sun: PiSunDuotone,
+  moon: PiMoonDuotone,
 };
