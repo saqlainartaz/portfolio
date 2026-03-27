@@ -1,4 +1,4 @@
-import { Column, Flex, Heading } from "@/once-ui/components";
+import { Column, Heading, Text } from "@/once-ui/components";
 import { Mailchimp } from "@/components";
 import { Posts } from "@/components/blog/Posts";
 import { baseURL } from "@/app/resources";
@@ -17,12 +17,7 @@ export async function generateMetadata() {
       description,
       type: "website",
       url: `https://${baseURL}/blog`,
-      images: [
-        {
-          url: ogImage,
-          alt: title,
-        },
-      ],
+      images: [{ url: ogImage, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
@@ -35,7 +30,7 @@ export async function generateMetadata() {
 
 export default function Blog() {
   return (
-    <Column maxWidth="s">
+    <Column maxWidth="m">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -58,14 +53,26 @@ export default function Blog() {
           }),
         }}
       />
-      <Heading marginBottom="l" variant="display-strong-s">
+
+      {/* Page heading */}
+      <Heading marginBottom="l" paddingTop="l" variant="heading-strong-xl">
         {blog.title}
       </Heading>
-      <Column fillWidth flex={1}>
-        <Posts range={[1, 3]} thumbnail />
+
+      {/* Top 3 posts: 1 featured + 2-col grid */}
+      <Column fillWidth flex={1} gap="m">
+        <Posts range={[1, 1]} thumbnail layout="horizontal" />
+        <Posts range={[2, 3]} columns="2" thumbnail />
+      </Column>
+
+      {/* Newsletter above earlier posts */}
+      {newsletter.display && <Mailchimp newsletter={newsletter} />}
+
+      {/* Earlier posts */}
+      <Column fillWidth gap="m" paddingTop="xl">
+        <Heading as="h2" variant="heading-strong-l">Earlier posts</Heading>
         <Posts range={[4]} columns="2" />
       </Column>
-      {newsletter.display && <Mailchimp newsletter={newsletter} />}
     </Column>
   );
 }

@@ -63,19 +63,19 @@ export default function Home() {
           }),
         }}
       />
-      <Column fillWidth paddingY="l" gap="m">
-        <Column maxWidth="s">
-          <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="m">
-            <Heading wrap="balance" variant="display-strong-l">
+      <Column fillWidth paddingY="l" gap="m" horizontal="center">
+        <Column maxWidth="s" horizontal="center">
+          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="m">
+            <Heading wrap="balance" variant="display-strong-l" align="center">
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="start" paddingBottom="m">
-            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
+          <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="m">
+            <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl" align="center">
               {home.subline}
             </Text>
           </RevealFx>
-          <RevealFx translateY="12" delay={0.4} horizontal="start">
+          <RevealFx translateY="12" delay={0.4} horizontal="center">
             <Button
               id="about"
               data-border="rounded"
