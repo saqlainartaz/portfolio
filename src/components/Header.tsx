@@ -163,12 +163,22 @@ export const Header = () => {
                 </>
               )}
               <Line vert maxHeight="24" />
-              <IconButton
-                size="s"
-                icon={theme === "dark" ? "light" : "dark"}
-                tooltip={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              />
+              <Flex gap="4" paddingX="4">
+                <IconButton
+                  size="s"
+                  variant={theme === "light" ? "secondary" : "ghost"}
+                  icon="sun"
+                  tooltip="Switch to Light Mode"
+                  onClick={() => setTheme("light")}
+                />
+                <IconButton
+                  size="s"
+                  variant={theme === "dark" ? "secondary" : "ghost"}
+                  icon="moon"
+                  tooltip="Switch to Dark Mode"
+                  onClick={() => setTheme("dark")}
+                />
+              </Flex>
             </Flex>
           </Flex>
         </Flex>

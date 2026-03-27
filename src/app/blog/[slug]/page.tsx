@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { getPosts } from "@/app/utils/utils";
-import { Avatar, Column, Flex, Heading, SmartImage, SmartLink, Text } from "@/once-ui/components";
+import { Avatar, Column, Flex, Grid, Heading, SmartImage, SmartLink, Text } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { formatDate } from "@/app/utils/formatDate";
 import ScrollToHash from "@/components/ScrollToHash";
+import Post from "@/components/blog/Post";
 
 interface BlogParams {
   params: Promise<{
@@ -53,11 +54,17 @@ export async function generateMetadata(props: BlogParams) {
 
 export default async function BlogPost(props: BlogParams) {
   const params = await props.params;
-  let post = getPosts(["src", "app", "blog", "posts"]).find((post) => post.slug === params.slug);
+  const allPosts = getPosts(["src", "app", "blog", "posts"]);
+  let post = allPosts.find((post) => post.slug === params.slug);
 
   if (!post) {
     notFound();
   }
+
+  const relatedPosts = allPosts
+    .filter((p) => p.slug !== params.slug)
+    .sort((a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime())
+    .slice(0, 2);
 
   return (
     <Column as="section" fillWidth horizontal="center" gap="l">
@@ -137,6 +144,22 @@ export default async function BlogPost(props: BlogParams) {
       <Column as="article" maxWidth="s" fillWidth>
         <CustomMDX source={post.content} />
       </Column>
+
+      {/* Read Next Section */}
+      {relatedPosts.length > 0 && (
+        <Column fillWidth gap="xl" horizontal="center" marginTop="160" marginBottom="160">
+          <Flex fillWidth maxWidth="s" horizontal="center">
+            <Heading as="h2" variant="display-strong-xs" align="center">
+              Read Next
+            </Heading>
+          </Flex>
+          <Grid columns="2" gap="l" mobileColumns="1" fillWidth maxWidth="m">
+            {relatedPosts.map((relatedPost) => (
+              <Post key={relatedPost.slug} post={relatedPost} thumbnail={true} />
+            ))}
+          </Grid>
+        </Column>
+      )}
 
       <ScrollToHash />
     </Column>
