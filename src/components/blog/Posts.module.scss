@@ -5,15 +5,13 @@
 }
 
 .hover:hover {
-    background: var(--neutral-alpha-medium);
+    background: var(--brand-alpha-weak);
 }
 
 .card {
     border-radius: var(--radius-l);
     overflow: hidden;
-    transition: transform var(--transition-micro-medium);
 }
 
 .hover:hover .card {
-    transform: scale(1.01);
 }
