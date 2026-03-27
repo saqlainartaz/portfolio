@@ -28,13 +28,13 @@ const style = {
 
 const effects = {
   mask: {
-    cursor: true,
+    cursor: false,
     x: 0,
     y: 0,
-    radius: 10,
+    radius: 75,
   },
   gradient: {
-    display: true,
+    display: false,
     x: 50,
     y: 0,
     width: 100,
@@ -42,7 +42,7 @@ const effects = {
     tilt: 0,
     colorStart: "brand-background-strong",
     colorEnd: "static-transparent",
-    opacity: 25,
+    opacity: 50,
   },
   dots: {
     display: true,
