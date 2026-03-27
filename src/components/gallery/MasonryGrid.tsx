@@ -7,9 +7,7 @@ import { gallery } from "@/app/resources/content";
 
 export default function MasonryGrid() {
   const breakpointColumnsObj = {
-    default: 4,
-    1440: 3,
-    1024: 2,
+    default: 2,
     560: 1,
   };
 

@@ -14,6 +14,7 @@ import { Source_Code_Pro } from "next/font/google";
 
 import { person, home } from "@/app/resources/content";
 import { Background, Column, Flex, ToastProvider } from "@/once-ui/components";
+import { ThemeProvider } from "@/components/ThemeProvider";
  
 
 
@@ -79,6 +80,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
     <Flex
       as="html"
       lang="en"
+      suppressHydrationWarning
       background="page"
       data-neutral={style.neutral}
       data-brand={style.brand}
@@ -96,12 +98,30 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         code.variable,
       )}
     >
-    <Analytics />
-    <GoogleAnalytics gaId="G-8E3LM6PV2R" />
-
-      <ToastProvider>
-        <Column style={{ minHeight: "100vh" }} as="body" fillWidth margin="0" padding="0">
-          <Background
+      <head>
+        <script
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+             __html: `
+              (function() {
+                try {
+                  const root = document.documentElement;
+                  const theme = localStorage.getItem('data-theme');
+                  if (theme) {
+                    root.setAttribute('data-theme', theme);
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <ThemeProvider>
+        <ToastProvider>
+          <Column style={{ minHeight: "100vh" }} as="body" fillWidth margin="0" padding="0">
+            <Analytics />
+            <GoogleAnalytics gaId="G-8E3LM6PV2R" />
+            <Background
             mask={{
               cursor: effects.mask.cursor,
               x: effects.mask.x,
@@ -167,7 +187,8 @@ export default async function RootLayout({ children }: RootLayoutProps) {
           </Flex>
           <Footer />
         </Column>
-      </ToastProvider>
+        </ToastProvider>
+      </ThemeProvider>
     </Flex>
   );
 }

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { CustomMDX } from "@/components/mdx";
 import { getPosts } from "@/app/utils/utils";
-import { AvatarGroup, Button, Column, Heading, Row, Text } from "@/once-ui/components";
+import { Avatar, Column, Flex, Heading, SmartImage, SmartLink, Text } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import { person } from "@/app/resources/content";
 import { formatDate } from "@/app/utils/formatDate";
@@ -28,14 +28,7 @@ export async function generateMetadata(props: BlogParams) {
     return;
   }
 
-  let {
-    title,
-    publishedAt: publishedTime,
-    summary: description,
-    images,
-    image,
-    team,
-  } = post.metadata;
+  let { title, publishedAt: publishedTime, summary: description, image } = post.metadata;
   let ogImage = image ? `https://${baseURL}${image}` : `https://${baseURL}/og?title=${title}`;
 
   return {
@@ -47,11 +40,7 @@ export async function generateMetadata(props: BlogParams) {
       type: "article",
       publishedTime,
       url: `https://${baseURL}/blog/${post.slug}`,
-      images: [
-        {
-          url: ogImage,
-        },
-      ],
+      images: [{ url: ogImage }],
     },
     twitter: {
       card: "summary_large_image",
@@ -62,7 +51,7 @@ export async function generateMetadata(props: BlogParams) {
   };
 }
 
-export default async function Blog(props: BlogParams) {
+export default async function BlogPost(props: BlogParams) {
   const params = await props.params;
   let post = getPosts(["src", "app", "blog", "posts"]).find((post) => post.slug === params.slug);
 
@@ -70,13 +59,8 @@ export default async function Blog(props: BlogParams) {
     notFound();
   }
 
-  const avatars =
-    post.metadata.team?.map((person) => ({
-      src: person.avatar,
-    })) || [];
-
   return (
-    <Column as="section" maxWidth="xs" gap="l">
+    <Column as="section" fillWidth horizontal="center" gap="l">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -99,19 +83,61 @@ export default async function Blog(props: BlogParams) {
           }),
         }}
       />
-      <Button href="/blog" weight="default" variant="tertiary" size="s" prefixIcon="chevronLeft">
-        Posts
-      </Button>
-      <Heading variant="display-strong-s">{post.metadata.title}</Heading>
-      <Row gap="12" vertical="center">
-        {avatars.length > 0 && <AvatarGroup size="s" avatars={avatars} />}
-        <Text variant="body-default-s" onBackground="neutral-weak">
-          {post.metadata.publishedAt && formatDate(post.metadata.publishedAt)}
+
+      {/* Centered "Blog" breadcrumb link */}
+      <Flex horizontal="center" fillWidth>
+        <SmartLink href="/blog" unstyled>
+          <Text variant="label-default-s" onBackground="neutral-weak">
+            Blog
+          </Text>
+        </SmartLink>
+      </Flex>
+
+      {/* Date */}
+      <Flex horizontal="center" fillWidth>
+        <Text variant="label-default-s" onBackground="neutral-weak">
+          {post.metadata.publishedAt && formatDate(post.metadata.publishedAt, false)}
         </Text>
-      </Row>
-      <Column as="article" fillWidth>
+      </Flex>
+
+      {/* Title and tagline — narrow column, centered */}
+      <Column maxWidth="s" horizontal="center" gap="m">
+        <Heading as="h1" variant="display-strong-s" align="center" wrap="balance">
+          {post.metadata.title}
+        </Heading>
+        {post.metadata.summary && (
+          <Text variant="display-default-xs" onBackground="neutral-weak" align="center" wrap="balance">
+            {post.metadata.summary}
+          </Text>
+        )}
+      </Column>
+
+      {/* Author */}
+      <Flex horizontal="center" vertical="center" gap="8">
+        <Avatar src={person.avatar} size="m" />
+        <Text variant="body-default-s">{person.name}</Text>
+      </Flex>
+
+      {/* Hero image — wider than text content */}
+      {post.metadata.image && (
+        <Flex fillWidth maxWidth="l" horizontal="center">
+          <SmartImage
+            priority
+            fillWidth
+            radius="l"
+            src={post.metadata.image}
+            alt={post.metadata.title}
+            aspectRatio="16 / 9"
+            sizes="(max-width: 768px) 100vw, 1200px"
+          />
+        </Flex>
+      )}
+
+      {/* MDX content — narrow readable width */}
+      <Column as="article" maxWidth="s" fillWidth>
         <CustomMDX source={post.content} />
       </Column>
+
       <ScrollToHash />
     </Column>
   );

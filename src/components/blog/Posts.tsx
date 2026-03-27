@@ -6,9 +6,10 @@ interface PostsProps {
   range?: [number] | [number, number];
   columns?: "1" | "2" | "3";
   thumbnail?: boolean;
+  layout?: "horizontal" | "vertical";
 }
 
-export function Posts({ range, columns = "1", thumbnail = false }: PostsProps) {
+export function Posts({ range, columns = "1", thumbnail = false, layout = "vertical" }: PostsProps) {
   let allBlogs = getPosts(["src", "app", "blog", "posts"]);
 
   const sortedBlogs = allBlogs.sort((a, b) => {
@@ -24,7 +25,7 @@ export function Posts({ range, columns = "1", thumbnail = false }: PostsProps) {
       {displayedBlogs.length > 0 && (
         <Grid columns={columns} mobileColumns="1" fillWidth marginBottom="40" gap="m">
           {displayedBlogs.map((post) => (
-            <Post key={post.slug} post={post} thumbnail={thumbnail} />
+            <Post key={post.slug} post={post} thumbnail={thumbnail} layout={layout} />
           ))}
         </Grid>
       )}
