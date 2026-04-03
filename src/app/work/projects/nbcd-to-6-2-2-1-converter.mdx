@@ -1,0 +1,66 @@
+---
+title: "NBCD to 6-2-2-1 Digital Logic Converter"
+publishedAt: "2025-01-01"
+summary: "Designed and implemented a digital logic circuit that converts Natural Binary Coded Decimal (NBCD) to 6-2-2-1 code using minimized Boolean expressions derived from Karnaugh maps, AND/OR/NOT gates, and CircuitVerse simulation."
+images:
+  - "https://raw.githubusercontent.com/saqlainartaz/portfolio/main/src/app/work/projects/img/nbcd-to-6-2-2-1-converter/0.png"
+  - "https://raw.githubusercontent.com/saqlainartaz/portfolio/main/src/app/work/projects/img/nbcd-to-6-2-2-1-converter/1.png"
+  - "https://raw.githubusercontent.com/saqlainartaz/portfolio/main/src/app/work/projects/img/nbcd-to-6-2-2-1-converter/2.png"
+team:
+  - name: "Saqlain Alam Artas"
+    role: "Student Researcher"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/saqlainartaz"
+link: "https://docs.google.com/document/d/1J72vj__8RHCoNnjRxoWpyl5lIqT6fFO-6L1zGQ5VpKw/edit?usp=sharing"
+---
+
+## Overview
+
+This project involves the design and implementation of a digital logic circuit that converts Natural Binary Coded Decimal (NBCD) into its equivalent 6-2-2-1 code representation. NBCD uses the standard "8421" encoding scheme where each decimal digit (0–9) is represented by a 4-bit binary value. The 6-2-2-1 code is an alternative BCD scheme where each bit position carries weights of 6, 2, 2, and 1 respectively.
+
+By deriving minimized Boolean expressions through Karnaugh map analysis and implementing them with basic logic gates (AND, OR, NOT), the circuit achieves reliable code conversion with minimal hardware resources.
+- [View Circuit Diagram on CircuitVerse](https://circuitverse.org/users/243386/projects/8421-to-6221)
+
+## Key Features
+
+- **Truth Table Mapping**: Created a complete truth table mapping all 10 valid NBCD inputs (0000–1001) to their corresponding 6-2-2-1 outputs, establishing the foundation for Boolean expression derivation.
+
+- **Karnaugh Map Minimization**: Used K-diagrams for each of the four output bits to simplify the Boolean expressions, reducing the number of required gates and ensuring an efficient circuit design.
+
+- **Gate-Level Circuit Design**: Selected and implemented specific ICs — 74LS08 (AND gates) and 74LS32 (OR gates) — along with NOT gates to build the combinational logic circuit from the minimized expressions.
+
+- **Circuit Simulation**: Implemented and tested the complete converter circuit using CircuitVerse, an online circuit simulation platform, verifying correct output for all input combinations before any physical build.
+
+- **Hardware-Ready Design**: The circuit is fully specified for breadboard implementation using standard 74LS series ICs, switches for 4-bit input, and LEDs for output visualization.
+
+## Technologies Used
+
+- **CircuitVerse**: Online digital logic simulator used for circuit design, simulation, and verification.
+- **74LS08 IC**: Quad 2-input AND gate for Boolean multiplication operations.
+- **74LS32 IC**: Quad 2-input OR gate for Boolean addition operations.
+- **74LS04 IC**: Hex inverter (NOT gate) for signal inversion/complementation.
+- **Breadboard & Jumper Wires**: For physical prototyping and circuit construction.
+- **Karnaugh Maps**: Used for Boolean expression minimization across all four output variables.
+
+## Challenges and Learnings
+
+The primary challenge lay in correctly deriving the minimized Boolean expressions for each output bit from the K-maps. With the 6-2-2-1 code having non-standard weights, the mapping isn't immediately intuitive — each output variable required careful grouping of minterms to achieve true minimization.
+
+Working through this process reinforced how Karnaugh maps serve as a visual bridge between raw truth tables and efficient hardware implementation. By systematically minimizing each expression, the final circuit requires fewer gates than a naive sum-of-products approach, which directly translates to lower cost, less power consumption, and simpler physical wiring.
+
+The project also highlighted the practical considerations of gate selection — choosing between available IC families (74LS series in this case), understanding pin configurations, and planning the physical layout on a breadboard to minimize jumper wire complexity.
+
+## Outcome
+
+The project successfully delivers a complete NBCD to 6-2-2-1 converter with:
+
+- **Correct Logic**: All 10 input combinations (0–9) produce the correct 6-2-2-1 output as verified through simulation.
+- **Minimized Gate Count**: K-map analysis reduced the gate count compared to direct minterm implementation, creating a more efficient circuit.
+- **Simulated & Tested**: The full circuit was verified in CircuitVerse, confirming functional correctness for all valid inputs.
+- **Production-Ready Design**: Complete specifications for hardware realization using standard 74LS ICs, switches, and LEDs on a breadboard.
+
+This project demonstrates competence in digital logic design fundamentals — from truth table creation through K-map minimization to gate-level implementation and simulation — which are essential skills for any hardware or embedded systems engineer.
+
+---
+
+This project showcases ability to design, minimize, and simulate digital logic circuits using fundamental Boolean algebra techniques and standard IC components.
