@@ -1,0 +1,66 @@
+---
+title: "Computer Networks: From VM Setup to Network Analysis and Deployment"
+publishedAt: "2024-11-01"
+summary: "Built a cross-continental network lab spanning Japan and USA cloud servers, performing bandwidth testing, traffic monitoring, website deployment, and a custom chat application — all as part of a computer networks course project."
+images:
+  - "/images/projects/project-02/image-01.jpeg"
+  - "/images/projects/project-02/image-03.jpeg"
+  - "/images/projects/project-02/image-05.jpeg"
+  - "/images/projects/project-02/image-15.jpeg"
+  - "/images/projects/project-02/image-30.jpeg"
+  - "/images/projects/project-02/image-50.jpeg"
+team:
+  - name: "Saqlain Alam Artas"
+    role: "Student Researcher"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/company/seeu/"
+link: "https://seeu.edu.mk"
+---
+
+## Overview
+
+In this project, I set up and analyzed a cross-continental computer network between two virtual machines deployed in different geographic regions — Japan and the United States. The goal was to gain hands-on experience with network configuration, performance measurement, website deployment, and network scripting. By building this lab across real cloud infrastructure, I was able to measure real-world network characteristics like round-trip time, bandwidth asymmetry, and traffic patterns.
+
+## Key Features
+
+- **Dual VM Network Configuration**: Provisioned two Ubuntu virtual machines (15 GB each) in geographically separated data centers — VM1 in Japan (10.146.0.2 / 104.198.112.119) and VM2 in the USA (10.128.0.4 / 34.41.17.42). Configured internal and external network interfaces for both machines.
+- **Real-time Network Performance Analysis**: Measured Round-Trip Time (RTT) values between the two VMs using internal IPs, and conducted bandwidth analysis with `iperf3`. Identified small but meaningful bandwidth asymmetries between upload and download directions, reflecting the inherent characteristics of cross-continental cloud network routing.
+- **System Resource Monitoring**: Monitored CPU and memory usage using `htop`, identifying that the most resource-intensive processes were tied to the Google Guest Agent (file system related). Tracked incoming and outgoing network traffic over 30-second intervals using `sysstat`.
+- **Web Server Deployment**: Installed, configured, and deployed a website using Apache2 on the server. Set up the web server, managed directory permissions, removed the default index page, and deployed a custom HTML page.
+- **Custom Chat Application**: Built a chat application using Python with HTTP Persistent Connections support, allowing for efficient communication between clients without repeated connection overhead.
+- **Network Algorithm Implementation**: Implemented and modified Dijkstra's shortest path algorithm to match specific network topology requirements.
+
+## Technologies Used
+
+- **Google Cloud Platform (GCP)**: For provisioning virtual machines in Japan and USA regions.
+- **Ubuntu Linux**: Operating system for both virtual machines, providing a consistent and well-supported environment.
+- **SSH**: For secure remote access and command execution between VMs and the host machine.
+- **iperf3**: Industry-standard tool for measuring maximum TCP and UDP bandwidth performance.
+- **Apache2**: Web server for hosting and serving the custom website.
+- **Python 3 & pip3**: For developing the chat application with persistent HTTP connections.
+- **sysstat & htop**: For real-time system and network traffic monitoring.
+- **Dijkstra's Algorithm**: Custom implementation for network pathfinding and routing analysis.
+
+## Challenges and Learnings
+
+One of the most insightful aspects of this project was observing the real-world impact of geographic distance on network performance. The cross-continental setup between Japan and the USA introduced measurable latency in round-trip times, and the bandwidth tests revealed asymmetrical differences between upload and download throughput — a common reality in production networks that's easy to overlook in theory but critical in practice.
+
+Setting up the Apache2 web server required understanding directory structure, file permissions, and service management on Ubuntu. The chat application development reinforced the importance of connection persistence for reducing overhead in networked applications. Implementing Dijkstra's algorithm in the context of network routing deepened my understanding of how real routing protocols calculate optimal paths.
+
+The systematic approach to configuration — from VM creation through network measurement to service deployment — taught me the value of methodical infrastructure work and how automated tools can streamline network analysis tasks.
+
+## Outcome
+
+This project successfully demonstrated end-to-end network competency across multiple domains:
+
+- **Infrastructure Setup**: Two cloud VMs in different regions with proper network configuration
+- **Performance Measurement**: Quantified latency, bandwidth, and resource usage with real data showing expected cross-continental network behavior
+- **Service Deployment**: A functional web server serving custom HTML content
+- **Application Development**: A working chat application with HTTP persistent connections
+- **Algorithm Implementation**: Dijkstra's shortest path algorithm applied to network topology analysis
+
+The network measurements confirmed expected behavior for cloud-to-cloud connections across different continents, with minor bandwidth asymmetries that reflect real routing characteristics. This project bridged theoretical computer networking concepts with practical, hands-on implementation on real cloud infrastructure.
+
+---
+
+This project demonstrates comprehensive understanding of computer networking fundamentals, cloud infrastructure, system administration, and network application development.
