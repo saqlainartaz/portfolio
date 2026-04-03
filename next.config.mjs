@@ -11,3 +11,9 @@ const nextConfig = {
 };
 
 export default withMDX(nextConfig);
+
+module.exports = {
+  images: {
+    domains: ['raw.githubusercontent.com'],
+  },
+};
