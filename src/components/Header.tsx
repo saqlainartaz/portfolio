@@ -44,7 +44,6 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
-  const { theme, setTheme } = useTheme();
 
   return (
     <>
