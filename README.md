@@ -1,5 +1,4 @@
 <div align="center">
-  <img src="https://once-ui.com/images/logo.svg" alt="Once UI Logo" width="80" />
   <h1>✨ Magic Portfolio</h1>
   <p><strong>A high-end, designer-first portfolio built with Once UI & Next.js</strong></p>
 
