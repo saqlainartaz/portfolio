@@ -67,7 +67,7 @@ src/
 
 - **Theme and config**: All theme settings live in `src/app/resources/config.js` (theme colors, border style, effects, routes, baseURL). All text content lives in `src/app/resources/content.js`. Both are re-exported from `src/app/resources/index.ts`.
 
-- **Once UI components**: The design system is vendored in `src/once-ui/`. Components use a custom prop system with design tokens (e.g., `padding="l"`, `background="page"`, `variant="display-strong-xl"`). Layout primitives are `<Column>` and `<Flex>`. Import from `@/once-ui/components` or `@/once-ui/modules`.
+- **Once UI components**: The design system is vendored in `src/once-ui/`. Components use a custom prop system with design tokens (e.g., `padding="l"`, `background="page"`, `variant="display-strong-xl"`). Layout primitives are `<Column>` and `<Flex>`. Import from `@/once-ui/components` or `@/once-ui/modules`. For Once UI documentation, use the Context7 MCP (`query-docs` with library ID `/once-ui-system/magic-portfolio`) before the Once UI docs website or web search.
 
 - **MDX rendering**: `CustomMDX` in `@/components/mdx` renders MDX content with custom components (smart links, heading anchors, enlargeable images, code blocks). Used by both blog and work pages.
 
