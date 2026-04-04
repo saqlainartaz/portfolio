@@ -3,8 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { Fade, Flex, Line, ToggleButton, IconButton } from "@/once-ui/components";
-import { useTheme } from "@/components";
+import { Fade, Flex, Line, ToggleButton } from "@/once-ui/components";
 import styles from "@/components/Header.module.scss";
 
 import { routes, display } from "@/app/resources";
@@ -45,7 +44,6 @@ export default TimeDisplay;
 
 export const Header = () => {
   const pathname = usePathname() ?? "";
-  const { theme, setTheme } = useTheme();
 
   return (
     <>
@@ -162,6 +160,8 @@ export const Header = () => {
                   />
                 </>
               )}
+              {/* Theme toggle hidden — to re-enable, uncomment this block */}
+              {/*
               <Line vert maxHeight="24" />
               <Flex gap="4" paddingX="4">
                 <IconButton
@@ -179,6 +179,7 @@ export const Header = () => {
                   onClick={() => setTheme("dark")}
                 />
               </Flex>
+              */}
             </Flex>
           </Flex>
         </Flex>
